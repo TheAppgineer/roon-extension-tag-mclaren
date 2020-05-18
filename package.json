@@ -1,0 +1,20 @@
+{
+    "name": "roon-extension-tag-mclaren",
+    "version": "0.1.0",
+    "description": "Roon extension for source control of TAG McLaren Audio devices",
+    "main": "tag-mclaren.js",
+    "author": "The Appgineer",
+    "license": "Apache-2.0",
+    "files": [],
+    "dependencies": {
+        "serialport": "^8.0.7",
+        "node-roon-api": "github:roonlabs/node-roon-api",
+        "node-roon-api-settings": "github:roonlabs/node-roon-api-settings",
+        "node-roon-api-status": "github:roonlabs/node-roon-api-status",
+        "node-roon-api-source-control": "github:roonlabs/node-roon-api-source-control"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/TheAppgineer/roon-extension-tag-mclaren.git"
+    }
+}
