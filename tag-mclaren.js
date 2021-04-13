@@ -23,7 +23,7 @@ const RoonApi              = require("node-roon-api"),
 var roon = new RoonApi({
     extension_id:        'com.theappgineer.tag-mclaren',
     display_name:        'TAG McLaren Audio Source Control',
-    display_version:     '0.1.0',
+    display_version:     '0.1.1',
     publisher:           'The Appgineer',
     email:               'theappgineer@gmail.com',
     website:             'https://github.com/TheAppgineer/roon-extension-tag-mclaren',
@@ -242,6 +242,16 @@ function init_tcb_controller() {
     });
 }
 
+function init_signal_handlers() {
+    const handle = function(signal) {
+        process.exit(0);
+    };
+
+    // Register signal handlers to enable a graceful stop of the container
+    process.on('SIGTERM', handle);
+    process.on('SIGINT', handle);
+}
+
 function init() {
     // Complete structures in console logs
     require("util").inspect.defaultOptions.depth = null;
@@ -252,6 +262,7 @@ function init() {
         svc_status.set_status('No Serial Port configured in Settings', true);
     }
 
+    init_signal_handlers();
     roon.start_discovery();
 }
 

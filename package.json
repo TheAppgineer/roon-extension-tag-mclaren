@@ -1,6 +1,6 @@
 {
     "name": "roon-extension-tag-mclaren",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "Roon extension for source control of TAG McLaren Audio devices",
     "main": "tag-mclaren.js",
     "author": "The Appgineer",
